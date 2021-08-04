@@ -11,12 +11,12 @@ inputs:
     description: 'Output if result is "success"'
     default: ""
     required: false
-  if-failed:
-    description: 'Output if result is "failed"'
+  if-failure:
+    description: 'Output if result is "failure"'
     default: ""
     required: false
   if-cancelled:
-    description: 'Output if result is "cancalled"'
+    description: 'Output if result is "cancelled"'
     default: ""
     required: false
   if-skipped:
