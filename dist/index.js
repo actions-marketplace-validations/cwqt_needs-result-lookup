@@ -138,10 +138,14 @@ const core = __importStar(__webpack_require__(470));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const cond = core.getInput('cond', { required: true });
-            const ifTrue = core.getInput('if_true');
-            const ifFalse = core.getInput('if_false');
-            core.setOutput('value', cond === 'true' ? ifTrue : ifFalse);
+            const result = core.getInput('result', { required: true });
+            const options = {
+                success: core.getInput("if-success"),
+                failure: core.getInput("if-failure"),
+                cancelled: core.getInput("if-cancelled"),
+                skipped: core.getInput("if-skipped")
+            };
+            core.setOutput('value', options[result]);
         }
         catch (error) {
             core.setFailed(error.message);

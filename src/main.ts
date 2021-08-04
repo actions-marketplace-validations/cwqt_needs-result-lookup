@@ -5,13 +5,13 @@ type Result = "success" | "failure" | "cancelled" | "skipped";
 
 async function run(): Promise<void> {
   try {
-    const result: Result = core.getInput('result', {required: true})
+    const result = core.getInput('result', {required: true}) as Result
 
     const options:{[index in Result]:string} = {
-      success: core.getInput("on-success"),
-      failure: core.getInput("on-failure"),
-      cancelled: core.getInput("on-cancelled"),
-      skipped: core.getInput("on-skipped")
+      success: core.getInput("if-success"),
+      failure: core.getInput("if-failure"),
+      cancelled: core.getInput("if-cancelled"),
+      skipped: core.getInput("if-skipped")
     }
 
     core.setOutput('value', options[result])
