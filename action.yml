@@ -3,7 +3,7 @@ description: 'Map needs.id.result to some value'
 author: 'cwqt'
 inputs:
   result:
-    description: 'Result of need e.g. ${{ needs.id.result }}'
+    description: 'Result of need e.g. needs.id.result'
     required: true
   if-success:
     description: 'Output if result is "success"'
