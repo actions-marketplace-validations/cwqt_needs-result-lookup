@@ -34,7 +34,7 @@ outputs:
 ```yaml
 needs: [some_job]
 steps:
-  - uses: cwqt/needs-result-lookup@v1.0.0
+  - uses: cwqt/needs-result-lookup@v1.0.3
     id: message
     with:
       result: ${{ needs.some_job.result }}
